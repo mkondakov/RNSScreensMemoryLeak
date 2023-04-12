@@ -5,7 +5,7 @@ This test project demonstrates memory leak in react-native-screens iOS implement
 Instance of RNSScreen class creates strong reference cycle with instance of RNSScreenView class.
 This issue is critical in our project where user can open and close react-native app inside native iOS app many times.
 
-```objc
+```h
 
 // RNSScreen.h
 
@@ -90,18 +90,20 @@ Memory usage:
 Memory leak:
 <img src="https://github.com/mkondakov/RNSScreensMemoryLeak/blob/master/memoryLeak.png" width="100%" alt="Memory leak">
 
-Memory usage before "fix":
-<video src='https://github.com/mkondakov/RNSScreensMemoryLeak/blob/master/beforeFix.mp4' width=180 alt="Memory usage before fix"/>
+Memory usage before "fix": beforeFix.mp4
 
-Memory usage after "fix":
-<video src='https://github.com/mkondakov/RNSScreensMemoryLeak/blob/master/afterFix.mp4' width=180 alt="Memory usage after fix"/>
+Memory usage after "fix": afterFix.mp4
 
 ## How to run
 
 ### Prerequisites
+
 cocoapods: 1.12.0
+
 node: v18.14.0
+
 yarn: 1.22.10
+
 Xcode: 14.3
 
 ### Steps
