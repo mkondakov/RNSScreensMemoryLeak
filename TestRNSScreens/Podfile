@@ -1,0 +1,55 @@
+# Install react-native dependencies before installing CocoaPods
+system("rm -rf build;cd react;yarn;")
+
+require_relative 'react/node_modules/react-native/scripts/react_native_pods'
+require_relative 'react/node_modules/@react-native-community/cli-platform-ios/native_modules'
+
+platform :ios, '16.0'
+
+project 'TestRNSScreens.xcodeproj'
+prepare_react_native_project!
+use_frameworks!
+inhibit_all_warnings!
+
+
+
+require_relative 'react/node_modules/react-native/scripts/react_native_pods'
+
+def react_pods
+
+    use_react_native!(
+        :path => 'react/node_modules/react-native',
+        # to enable hermes on iOS, change `false` to `true` and then install pods
+        :hermes_enabled => false,
+    )
+
+    pod 'react-native-safe-area-context', :path => 'react/node_modules/react-native-safe-area-context'
+    pod 'RNScreens', :path => 'react/node_modules/react-native-screens'
+    pod 'react-native-maps', :path => 'react/node_modules/react-native-maps'
+
+end
+
+# targets
+target 'TestRNSScreens' do
+    react_pods
+end
+
+# post install
+post_install do |installer|
+
+    installer.pods_project.build_configurations.each do |config|
+        config.build_settings['CODE_SIGNING_ALLOWED'] = "NO"
+        config.build_settings['GENERATE_INFOPLIST_FILE'] = "YES"
+    end
+
+    react_native_post_install(
+      installer,
+      'react/node_modules/react-native',
+      # Set `mac_catalyst_enabled` to `true` in order to apply patches
+      # necessary for Mac Catalyst builds
+      :mac_catalyst_enabled => false
+    )
+
+    __apply_Xcode_12_5_M1_post_install_workaround(installer)
+
+end

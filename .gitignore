@@ -1,0 +1,37 @@
+## Build generated
+build/
+DerivedData/
+**/node_modules/
+**/Pods/
+.expo/
+
+xcuserdata/
+
+# macOS generated files
+.DS_Store
+.Spotlight-V100
+.Trashes
+
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+## Temporary - Remove in Xcode 14
+*Watch*.xcscheme
+
+# Swift Package Manager
+#
+# Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
+# Packages/
+# Package.pins
+.build/
+
+# AppCode IDE
+
+.idea/*

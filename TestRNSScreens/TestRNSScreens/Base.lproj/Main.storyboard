@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestRNSScreens" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ey-v7-imd">
+                                <rect key="frame" x="132.66666666666666" y="408.66666666666669" width="127.99999999999997" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Open RN App"/>
+                                <connections>
+                                    <action selector="openAppClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O1G-50-Tdj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="H0b-1l-Bat"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6ey-v7-imd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qqh-m5-AdT"/>
+                            <constraint firstItem="6ey-v7-imd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="uQk-ie-jho"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="102" y="4"/>
+        </scene>
+        <!--React Container-->
+        <scene sceneID="bAZ-WN-YF4">
+            <objects>
+                <viewController storyboardIdentifier="ReactContainer" id="yyX-GI-cK9" customClass="ReactContainer" customModule="TestRNSScreens" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9aq-sg-iG2">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wyx-Y0-63O">
+                                <rect key="frame" x="0.0" y="59" width="393" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbi-2v-4qV">
+                                        <rect key="frame" x="147" y="7" width="67" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Close"/>
+                                        <connections>
+                                            <action selector="closeAppClicked:" destination="yyX-GI-cK9" eventType="touchUpInside" id="iCp-xH-73L"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="RR0-iy-fbv"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CmN-0g-uHU">
+                                <rect key="frame" x="0.0" y="109" width="393" height="709"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4oE-7l-v1Q"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Wyx-Y0-63O" firstAttribute="leading" secondItem="4oE-7l-v1Q" secondAttribute="leading" id="DNF-WU-do8"/>
+                            <constraint firstItem="Wyx-Y0-63O" firstAttribute="width" secondItem="9aq-sg-iG2" secondAttribute="width" id="P5F-pW-PAF"/>
+                            <constraint firstItem="CmN-0g-uHU" firstAttribute="top" secondItem="Wyx-Y0-63O" secondAttribute="bottom" id="a09-2X-W3G"/>
+                            <constraint firstItem="4oE-7l-v1Q" firstAttribute="trailing" secondItem="CmN-0g-uHU" secondAttribute="trailing" id="g84-wj-WvK"/>
+                            <constraint firstItem="4oE-7l-v1Q" firstAttribute="bottom" secondItem="CmN-0g-uHU" secondAttribute="bottom" id="kTX-C3-doN"/>
+                            <constraint firstItem="CmN-0g-uHU" firstAttribute="leading" secondItem="4oE-7l-v1Q" secondAttribute="leading" id="o8X-Yd-QYt"/>
+                            <constraint firstItem="Wyx-Y0-63O" firstAttribute="top" secondItem="4oE-7l-v1Q" secondAttribute="top" id="sdc-V2-mEn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="reactContainer" destination="CmN-0g-uHU" id="ew8-QB-yi3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yfx-Hv-rov" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="805" y="4"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
